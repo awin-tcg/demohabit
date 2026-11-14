@@ -2,8 +2,6 @@
 
 A web app that tracks habit goals and encourages people to stick with them. Built by Team ACD for CS 410 Software Engineering at Bellevue College.
 
-**Live demo:** https://demohabit.vercel.app
-
 ## Overview
 
 Users enter the habits they want to build and log each day they follow through. The app stores that data in a cloud SQL backend and uses it to show progress and motivate consistency with features like streaks.
