@@ -1,8 +1,53 @@
-**A cloud-based web app that tracks user habit goals and encourages positive habitual behavior**
-ASP.NET backend w/ PostgreSQL, TypeScript + React frontend, hosted on AWS.
+# Habit Tracker
 
-Users input desired habits and log adherence to those habits on the app, which shall store this data in a cloud SQL-based backend. A Single Page Application (SPA) served by the backend communicates with it to read and write this data, which it then uses to present insights to the user and motivate positive adherence via systems like push notifications and streaks.
+A web app that tracks habit goals and encourages people to stick with them. Built by Team ACD for CS 410 Software Engineering at Bellevue College.
 
-Backend and frontend shall communicate via an HTTP RESTful API, ensuring abstraction of implementation details between backend and frontend.
+## Overview
 
-AWS Lightsail shall serve as the backend host, handling business logic and hosting the PostgreSQL database.
+Users enter the habits they want to build and log each day they follow through. The app stores that data in a cloud SQL backend and uses it to show progress and motivate consistency with features like streaks.
+
+The frontend is a single-page application that talks to the backend through an HTTP REST API, so neither side depends on the other's implementation details.
+
+## Architecture
+
+| Layer | Technology |
+|---|---|
+| Frontend | TypeScript, React, Vite, Tailwind CSS, TanStack Query, Zustand |
+| Backend | ASP.NET Core Web API |
+| Database | PostgreSQL |
+| Hosting | Vercel (frontend), AWS Lightsail (backend and database) |
+
+## Project layout
+
+```
+frontend/            React single-page application
+  src/
+    components/      habit cards, date picker, streak badge, navigation
+    hooks/           data hooks (useSession, useHabits, log queries)
+    services/        API client, authentication, time zone handling
+    stores/          session state
+    views/           pages
+backend/             ASP.NET Core API (controllers, services, data models)
+backend-complete/    backend variant with the database context
+```
+
+## Run it locally
+
+Frontend:
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Backend (requires the .NET SDK):
+
+```bash
+cd backend
+dotnet run
+```
+
+## Team
+
+Team ACD, CS 410, Bellevue College, Spring 2026. Allen Nguyen led the frontend.
